@@ -77,7 +77,7 @@ const cards = [
     subtitle: "Bangladesh Railway",
     contactNo: "163",
     serviceType: "Travel",
-    iconUrl: "assets/bangladesh-Railway.png",
+    iconUrl: "assets/bangladesh-railway.png",
     iconColor: "#FFE3E2",
   },
 ];
@@ -90,8 +90,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="card-body flex flex-col justify-between">
             <div>
                 <div class="mb-4 flex justify-between items-start">
-                    <figure class="w-14 h-14 flex items-center justify-center rounded-xl bg-[${card.iconColor}]">
-                        <img src=${card.iconUrl} alt="police" class="w-8">
+                    <figure class="w-14 h-14 flex items-center justify-center rounded-xl bg-[${
+                      card.iconColor
+                    }]">
+                        <img 
+                          src=${card.iconUrl} 
+                          alt=${card.subtitle + " icon"}
+                          class="w-8">
                     </figure>
                     <button class="cursor-pointer mark-fav-btn"><i class="bi bi-heart"></i></button>
                 </div>
@@ -100,8 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                 <div>
                 <div class="mt-2 mb-3">
-                    <h4 class="text-3xl font-bold contact-no">${card.contactNo}</h4>
-                    <h5 class="font-medium px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full w-max">${card.serviceType}</h5>
+                    <h4 class="text-3xl font-bold contact-no">${
+                      card.contactNo
+                    }</h4>
+                    <h5 class="font-medium px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full w-max">${
+                      card.serviceType
+                    }</h5>
                 </div>
                 <div class="grid grid-cols-2 card-actions">
                     <button class="btn cursor-pointer w-full copy-btn transition-all rounded-lg">
