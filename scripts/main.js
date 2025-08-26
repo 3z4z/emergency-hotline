@@ -77,7 +77,7 @@ const cards = [
     subtitle: "Bangladesh Railway",
     contactNo: "163",
     serviceType: "Travel",
-    iconUrl: "assets/fire-service.png",
+    iconUrl: "assets/bangladesh-Railway.png",
     iconColor: "#FFE3E2",
   },
 ];
