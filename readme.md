@@ -2,7 +2,7 @@
 Ans:<ul>
     <li><strong>getElementById:</strong> It gets an element by targeting it's id name.</li>
     <li><strong>getElementsByClassName:</strong> It gets the elements by targeting their same class names.</li>
-    <li><strong>querySelector:</strong> It gets an element by targeting it's query name. It only takes the first element, no matter it matches more.</li>
+    <li><strong>querySelector:</strong> It gets an element by targeting it's query name. It only takes the first element, no matter it matches further more.</li>
     <li><strong>querySelectorAll:</strong> It gets all the elements by targeting their same query names.</li>
 </ul>
 <h3>2. How do you create and insert a new element into the DOM?</h3>
@@ -20,4 +20,4 @@ Ans: When an event occurs in an element, the event travels to that element’s p
 <h3>4. What is Event Delegation in JavaScript? Why is it useful?</h3>
 Ans: Through the event bubbling, all the children gets the same event of the parent. This scenario is called <strong>event delegation.</strong>
 <h3>5. What is the difference between preventDefault() and stopPropagation() methods?</h3>
-Ans: <strong>preventDefault()</strong> prevents browser default behaviors of the target event. Where, <strong>stopPropagation()</strong> strops children's bubbling to the parent.
+Ans: <strong>preventDefault()</strong> prevents browser default behaviors of the target event. On the other hand, <strong>stopPropagation()</strong> stops children's bubbling to the parent.

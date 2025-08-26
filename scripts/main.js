@@ -140,8 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "rounded-lg",
           "flex",
           "items-center",
-          "justify-between",
-          "mb-3"
+          "justify-between"
         );
         const callTime = new Date().toLocaleTimeString();
         newHistory.innerHTML = `
@@ -167,7 +166,11 @@ document.addEventListener("DOMContentLoaded", function () {
   for (const btn of markFavBtns) {
     btn.addEventListener("click", function (e) {
       e.target.classList.remove("bi-heart");
-      e.target.classList.add("bi-heart-fill", "text-red-600");
+      e.target.classList.add(
+        "bi-heart-fill",
+        "text-red-600",
+        "drop-shadow-[1px_1px_1px_#6e0d0d]"
+      );
       heartCount++;
       heartWrap.innerText = heartCount;
     });

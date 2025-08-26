@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-  font-family: "Noto-sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
-.history-container > div {
-  margin-bottom: 1.125rem;
+#history-container > div {
+  margin-bottom: 0.5rem;
 }
 
-.history-container > div:last-child {
+#history-container > div:last-child {
   margin-bottom: 0;
 }

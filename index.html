@@ -15,26 +15,27 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="bg-[#F5FFF6]" id="body">
-    <header>
-        <nav class="bg-white py-6 sm:px-14 px-6 flex justify-between md:flex-nowrap flex-wrap">
+<body class="bg-[#F5FFF6]">
+    <header class="bg-white">
+        <nav class="max-w-[1920px] mx-auto py-6 sm:px-14 px-6 flex justify-between md:flex-nowrap flex-wrap">
             <a href="#" class="flex items-center sm:mb-0 mb-8">
                 <figure><img src="assets/logo.png" alt="main logo" class="max-h-[3.25rem]"></figure>
                 <span class="ms-3 font-black text-[#006747] text-xl leading-6">Emergency <br>Service</span>
             </a>
             <div class="flex gap-4 ms-auto">
                 <div class="md:py-3.5 py-2.5 md:px-6 px-5 h-max w-max rounded-full bg-[#41FF6B]/10 flex items-center">
-                    <span class="font-bold me-2.5" id="heart-wrap">0</span>
+                    <span class="font-bold me-2.5 mt-0.5 leading-3.5" id="heart-wrap">0</span>
                     <img src="assets/heart.png" alt="heart icon" class="w-6">
                 </div>
                 <div class="md:py-3.5 py-2.5 md:px-6 px-5 h-max w-max rounded-full bg-[#41FF6B]/10 flex items-center">
-                    <span class="font-bold me-2.5" id="coin-wrap">100</span>
+                    <span class="font-bold me-2.5 mt-0.5 leading-3.5" id="coin-wrap">100</span>
                     <img src="assets/coin.png" alt="coin icon" class="w-6">
                 </div>
-                <button
-                    class="bg-[#00A63E] md:py-3.5 py-2.5 md:px-9 px-5 h-max w-max rounded-full font-semibold text-white"><span
-                        id="copy-wrap">2</span>
-                    copy</button>
+                <div
+                    class="bg-[#00A63E] md:py-3.5 py-2.5 md:px-9 px-5 h-max w-max rounded-full font-semibold text-white">
+                    <span id="copy-wrap">2</span>
+                    copy
+                </div>
             </div>
         </nav>
     </header>
@@ -52,36 +53,38 @@
         </section>
 
         <!-- services -->
-        <div class="text-end pe-6 sm:hidden block">
-            <button id="toggle-history-btn"
-                class="bg-[#00A63E] py-2.5 px-5 rounded-full font-semibold text-white mt-6 active:bg-[#006625]">
-                Show History
-            </button>
-        </div>
-        <div class="flex h-full py-12 sm:px-14 px-6 lg:flex-row flex-col">
-            <!-- service hotline cards -->
-            <section
-                class="lg:order-1 order-2 grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 gap-8 xl:w-3/4 lg:w-3/5 w-full sm:max-w-full max-w-md mx-auto"
-                id="cards-container">
-            </section>
-            <!-- call history -->
-            <section id="call-history"
-                class="sm:block hidden lg:order-2 order-1 card bg-white card-md shadow-sm h-[-webkit-fill-available] lg:ms-8 xl:w-1/4 lg:w-2/5 w-full lg:mb-0 mb-8">
-                <div class="card-body">
-                    <div class="mb-4 flex justify-between items-center">
-                        <div class="flex items-center">
-                            <i class="bi bi-clock text-xl"></i>
-                            <span class="ms-2 font-medium text-lg">Call History</span>
+        <div class="max-w-[1920px] mx-auto">
+            <div class="text-end pe-6 sm:hidden block">
+                <button id="toggle-history-btn"
+                    class="bg-[#00A63E] py-2.5 px-5 rounded-full font-semibold text-white mt-6 active:bg-[#006625]">
+                    Show History
+                </button>
+            </div>
+            <div class="flex h-full py-12 sm:px-14 px-6 lg:flex-row flex-col">
+                <!-- service hotline cards -->
+                <section
+                    class="lg:order-1 order-2 grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 gap-8 xl:w-3/4 lg:w-3/5 w-full sm:max-w-full max-w-md mx-auto"
+                    id="cards-container">
+                </section>
+                <!-- call history -->
+                <section id="call-history"
+                    class="sm:block hidden lg:order-2 order-1 card bg-white card-md shadow-sm h-[-webkit-fill-available] lg:ms-8 xl:w-1/4 lg:w-2/5 w-full lg:mb-0 mb-8">
+                    <div class="card-body">
+                        <div class="mb-4 flex justify-between items-center">
+                            <div class="flex items-center">
+                                <i class="bi bi-clock text-xl"></i>
+                                <span class="ms-2 font-medium text-lg">Call History</span>
+                            </div>
+                            <button
+                                class="cursor-pointer bg-[#00A63E] px-9 py-3.5 rounded-full font-semibold text-white active:bg-[#006625]"
+                                id="history-clear-btn">
+                                Clear
+                            </button>
                         </div>
-                        <button
-                            class="cursor-pointer bg-[#00A63E] px-9 py-3.5 rounded-full font-semibold text-white active:bg-[#006625]"
-                            id="history-clear-btn">
-                            Clear
-                        </button>
+                        <div id="history-container"></div>
                     </div>
-                    <div id="history-container"></div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </main>
     <script src="scripts/main.js"></script>
