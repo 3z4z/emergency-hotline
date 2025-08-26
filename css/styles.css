@@ -4,6 +4,10 @@
   font-family: "Noto-sans", sans-serif;
 }
 
+.history-container > div {
+  margin-bottom: 1.125rem;
+}
+
 .history-container > div:last-child {
   margin-bottom: 0;
 }

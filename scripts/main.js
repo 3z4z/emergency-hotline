@@ -1,8 +1,11 @@
 const cardsContainer = document.getElementById("cards-container");
+const historyContainer = document.getElementById("history-container");
 const coinWrap = document.getElementById("coin-wrap");
 const heartWrap = document.getElementById("heart-wrap");
+const copyWrap = document.getElementById("copy-wrap");
 let coinCount = parseInt(coinWrap.innerText);
 let heartCount = parseInt(heartWrap.innerText);
+let copyCount = parseInt(copyWrap.innerText);
 
 const cards = [
   {
@@ -118,23 +121,48 @@ document.addEventListener("DOMContentLoaded", function () {
   const callBtns = document.getElementsByClassName("call-btn");
   for (const btn of callBtns) {
     btn.addEventListener("click", function (e) {
+      const title = e.target
+        .closest(".card-body")
+        .querySelector(".card-title").innerText;
+      const contactNo = e.target
+        .closest(".card-body")
+        .querySelector(".contact-no").innerText;
       if (coinCount < 20) {
         alert("Coin is too low, recharge now!");
       } else {
-        alert(
-          `Calling... ${
-            e.target.closest(".card-body").querySelector(".card-title")
-              .innerText
-          }: ${
-            e.target.closest(".card-body").querySelector(".contact-no")
-              .innerText
-          }`
-        );
+        alert(`Calling... ${title}: ${contactNo}`);
         coinCount = coinCount - 20;
         coinWrap.innerText = coinCount;
+        const newHistory = document.createElement("div");
+        newHistory.classList.add(
+          "bg-gray-100",
+          "p-4",
+          "rounded-lg",
+          "flex",
+          "items-center",
+          "justify-between",
+          "mb-3"
+        );
+        const callTime = new Date().toLocaleTimeString();
+        newHistory.innerHTML = `
+            <div class="me-4">
+                <h4 class="font-semibold text-lg">${title}</h4>
+                <p class="text-gray-500">${contactNo}</p>
+            </div>
+            <p class="text-nowrap text-end">${callTime}</p>
+        `;
+        historyContainer.appendChild(newHistory);
       }
     });
   }
+  const clearHistoryBtn = document.getElementById("history-clear-btn");
+  clearHistoryBtn.addEventListener("click", function () {
+    if (historyContainer.children.length > 0) {
+      historyContainer.remove(this.children);
+    } else {
+      alert("History is empty");
+    }
+  });
   const markFavBtns = document.getElementsByClassName("mark-fav-btn");
   for (const btn of markFavBtns) {
     btn.addEventListener("click", function (e) {
@@ -155,7 +183,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <i class="bi bi-check2-all"></i>
         <span class="me-2 font-normal">Copied</span>
       `;
-
+      copyCount++;
+      copyWrap.innerText = copyCount;
       setTimeout(function () {
         btn.classList.remove("bg-[#006747]", "text-white");
         btn.innerHTML = `
@@ -165,4 +194,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 1500);
     });
   }
+});
+
+const toggleHistoryBtn = document.getElementById("toggle-history-btn");
+toggleHistoryBtn.addEventListener("click", function () {
+  document.getElementById("call-history").classList.toggle("hidden");
 });
