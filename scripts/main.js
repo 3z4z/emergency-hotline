@@ -104,11 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h5 class="font-medium px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full w-max">${card.serviceType}</h5>
                 </div>
                 <div class="grid grid-cols-2 card-actions">
-                    <button class="btn cursor-pointer w-full copy-btn transition-all">
+                    <button class="btn cursor-pointer w-full copy-btn transition-all rounded-lg">
                         <i class="bi bi-copy"></i>
                         <span class="me-2 font-normal">Copy</span>
                     </button>
-                    <button class="btn cursor-pointer w-full bg-[#00A63E] hover:bg-[#057e32] text-white call-btn">
+                    <button class="btn cursor-pointer w-full bg-[#00A63E] hover:bg-[#057e32] text-white rounded-lg call-btn">
                         <i class="bi bi-telephone"></i>
                         <span class="me-2 font-normal">Call</span>
                     </button>
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const clearHistoryBtn = document.getElementById("history-clear-btn");
   clearHistoryBtn.addEventListener("click", function () {
     if (historyContainer.children.length > 0) {
-      historyContainer.remove(this.children);
+      historyContainer.innerHTML = "";
     } else {
       alert("History is empty");
     }
